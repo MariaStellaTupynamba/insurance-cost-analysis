@@ -1,0 +1,117 @@
+{
+  "summary": {
+    "gender_bias": {
+      "mean": {
+        "female": 12569.58,
+        "male": 13956.75
+      },
+      "median": {
+        "female": 9412.96,
+        "male": 9369.62
+      },
+      "count": {
+        "female": 662,
+        "male": 676
+      }
+    },
+    "age_groups": {
+      "mean": {
+        "(18, 30]": 9822.84,
+        "(30, 45]": 12647.46,
+        "(45, 60]": 16340.99,
+        "(60, 65]": 21063.16
+      },
+      "count": {
+        "(18, 30]": 375,
+        "(30, 45]": 394,
+        "(45, 60]": 409,
+        "(60, 65]": 91
+      }
+    },
+    "smoker_markup": {
+      "mean": {
+        "no": 8434.27,
+        "yes": 32050.23
+      },
+      "median": {
+        "no": 7345.41,
+        "yes": 34456.35
+      },
+      "count": {
+        "no": 1064,
+        "yes": 274
+      }
+    },
+    "correlation_matrix": {
+      "age": {
+        "age": 1.0,
+        "bmi": 0.1092718815485351,
+        "children": 0.04246899855884958,
+        "charges": 0.299008193330648
+      },
+      "bmi": {
+        "age": 0.1092718815485351,
+        "bmi": 1.0,
+        "children": 0.012758900820673994,
+        "charges": 0.19834096883362912
+      },
+      "children": {
+        "age": 0.04246899855884958,
+        "bmi": 0.012758900820673994,
+        "children": 1.0,
+        "charges": 0.06799822684790495
+      },
+      "charges": {
+        "age": 0.299008193330648,
+        "bmi": 0.19834096883362912,
+        "children": 0.06799822684790495,
+        "charges": 1.0
+      }
+    },
+    "regression_summary": {
+      "r2_score": 0.784,
+      "coefficients": {
+        "age": 312.5908093767502,
+        "bmi": 331.59026376372674,
+        "children": 540.2306130843447,
+        "sex_male": -42.66753079591268,
+        "smoker_yes": 23632.786274380203,
+        "region_northwest": -346.61587032845233,
+        "region_southeast": -618.5646606371997,
+        "region_southwest": -779.3306086007958,
+        "age_group_(30, 45]": -2287.1298956921464,
+        "age_group_(45, 60]": -2122.5949156812694,
+        "age_group_(60, 65]": -1957.0307182457927
+      }
+    }
+  },
+  "top_factors": [
+    [
+      "smoker_yes",
+      23632.786274380203
+    ],
+    [
+      "age_group_(30, 45]",
+      -2287.1298956921464
+    ],
+    [
+      "age_group_(45, 60]",
+      -2122.5949156812694
+    ],
+    [
+      "age_group_(60, 65]",
+      -1957.0307182457927
+    ],
+    [
+      "region_southwest",
+      -779.3306086007958
+    ]
+  ],
+  "bias_notes": [
+    "\u26a0\ufe0f The dataset reflects binary gender (male/female), ignoring non-binary identities.",
+    "\u26a0\ufe0f Charges for smokers are extremely inflated, likely based on profit risk rather than actual cost.",
+    "\u26a0\ufe0f Charges rise with age \u2014 potentially penalizing individuals as they become less economically productive.",
+    "\u26a0\ufe0f Regional pricing may reflect systemic inequalities in healthcare access and provider markup.",
+    "\u26a0\ufe0f Predictive models based on these features may reinforce existing social biases in automated insurance decisions."
+  ]
+}
